@@ -1,6 +1,6 @@
 import PyPDF2
 
-def rotate_page(pdf_path, page_number, rotation_angle):
+def rotate_pagee(pdf_path, page_number, rotation_angle):
     with open(pdf_path, 'rb') as file:
         reader = PyPDF2.PdfReader(file)
         writer = PyPDF2.PdfWriter()
@@ -15,5 +15,5 @@ def rotate_page(pdf_path, page_number, rotation_angle):
         with open('rotated.pdf', 'wb') as output_file:
             writer.write(output_file)
 
-# Usage example
-rotate_page('input.pdf', 1, 90)
+
+rotate_pagee('input.pdf', 1, 90)
