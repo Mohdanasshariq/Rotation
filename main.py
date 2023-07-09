@@ -2,18 +2,11 @@ def rotate_page(input_path, output_path, page_number, rotation_angle):
     with open(input_path, 'rb') as file:
         pdf_data = file.read()
 
-<<<<<<< HEAD
     # Identify the start and end positions of the page content
     start_page_tag = b"/Type /Page\n"
     end_page_tag = b"\nendobj\n"
     page_start = pdf_data.find(start_page_tag, 0)
     page_end = pdf_data.find(end_page_tag, page_start)
-=======
-def rotate_pagee(pdf_path, page_number, rotation_angle):
-    with open(pdf_path, 'rb') as file:
-        reader = PyPDF2.PdfReader(file)
-        writer = PyPDF2.PdfWriter()
->>>>>>> 9046ce28e75960221e1755519a6161d96c1b293b
 
     if page_start == -1 or page_end == -1:
         raise ValueError("Invalid PDF file or page number.")
@@ -48,15 +41,10 @@ def rotate_pagee(pdf_path, page_number, rotation_angle):
     with open(output_path, 'wb') as output_file:
         output_file.write(modified_pdf_data)
 
-<<<<<<< HEAD
 # Usage example
 input_file = 'input.pdf'
-output_file = 'output2.pdf'
+output_file = 'output.pdf'
 page_number = 1  # The page number you want to rotate
 rotation_angle = 90  # The rotation angle in degrees (e.g., 90 for clockwise)
 
 rotate_page(input_file, output_file, page_number, rotation_angle)
-=======
-
-rotate_pagee('input.pdf', 1, 90)
->>>>>>> 9046ce28e75960221e1755519a6161d96c1b293b
